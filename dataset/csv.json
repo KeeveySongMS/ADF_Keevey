@@ -1,0 +1,88 @@
+{
+	"name": "csv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "keeveydw",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "CrowdStrike.csv",
+				"container": "load"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Hostname",
+				"type": "String"
+			},
+			{
+				"name": "LocalIP",
+				"type": "String"
+			},
+			{
+				"name": "CreatedTime",
+				"type": "String"
+			},
+			{
+				"name": "FalconHostLink",
+				"type": "String"
+			},
+			{
+				"name": "DetectionDescription",
+				"type": "String"
+			},
+			{
+				"name": "Action",
+				"type": "String"
+			},
+			{
+				"name": "Scenario",
+				"type": "String"
+			},
+			{
+				"name": "UserName",
+				"type": "String"
+			},
+			{
+				"name": "Risk_SLA",
+				"type": "String"
+			},
+			{
+				"name": "Severity",
+				"type": "String"
+			},
+			{
+				"name": "FileName",
+				"type": "String"
+			},
+			{
+				"name": "CommandLine",
+				"type": "String"
+			},
+			{
+				"name": "VT_Results",
+				"type": "String"
+			},
+			{
+				"name": "MD5",
+				"type": "String"
+			},
+			{
+				"name": "SHA256",
+				"type": "String"
+			},
+			{
+				"name": "Vessel_Code",
+				"type": "String"
+			}
+		]
+	}
+}
