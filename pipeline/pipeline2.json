@@ -256,14 +256,7 @@
 			{
 				"name": "Copy data1",
 				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "csv_to_parquet",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -274,18 +267,196 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "ParquetSource",
+						"type": "DelimitedTextSource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
 							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
 						}
 					},
-					"enableStaging": false
+					"sink": {
+						"type": "SqlDWSink",
+						"allowCopyCommand": true
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Hostname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Hostname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LocalIP",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LocalIP",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CreatedTime",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CreatedTime",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FalconHostLink",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FalconHostLink",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DetectionDescription",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DetectionDescription",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Action",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Action",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Scenario",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Scenario",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "UserName",
+									"type": "String"
+								},
+								"sink": {
+									"name": "UserName",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Risk_SLA",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Risk_SLA",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Severity",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Severity",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FileName",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FileName",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CommandLine",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CommandLine",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VT_Results",
+									"type": "String"
+								},
+								"sink": {
+									"name": "VT_Results",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MD5",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MD5",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SHA256",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SHA256",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Vessel_Code",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Vessel_Code",
+									"type": "String"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
-						"referenceName": "Parquet2",
+						"referenceName": "csv",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureSynapseAnalyticsTable1",
 						"type": "DatasetReference"
 					}
 				]
