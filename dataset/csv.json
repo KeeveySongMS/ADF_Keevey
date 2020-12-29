@@ -14,7 +14,8 @@
 				"container": "load"
 			},
 			"columnDelimiter": ",",
-			"escapeChar": "\\",
+			"rowDelimiter": "",
+			"escapeChar": "\"",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
