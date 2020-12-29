@@ -14,10 +14,10 @@
 				"container": "load"
 			},
 			"columnDelimiter": ",",
-			"rowDelimiter": "\n",
-			"escapeChar": "\"",
+			"rowDelimiter": "",
+			"escapeChar": "",
 			"firstRowAsHeader": true,
-			"quoteChar": "\""
+			"quoteChar": ""
 		},
 		"schema": [
 			{
