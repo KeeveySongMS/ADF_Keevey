@@ -28,12 +28,17 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"allowCopyCommand": true
+						"allowPolyBase": true,
+						"polyBaseSettings": {
+							"rejectValue": 0,
+							"rejectType": "value",
+							"useTypeDefault": true
+						}
 					},
 					"enableStaging": true,
 					"stagingSettings": {
 						"linkedServiceName": {
-							"referenceName": "AzureBlobStorage1",
+							"referenceName": "keeveydw",
 							"type": "LinkedServiceReference"
 						},
 						"path": "load"
@@ -193,7 +198,7 @@
 							},
 							{
 								"source": {
-									"name": "Vessel_Code",
+									"name": "Vessel_Code\r",
 									"type": "String"
 								},
 								"sink": {
