@@ -16,7 +16,7 @@
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "table01"
+			"table": "TestCrowdStrikeAlert_77"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
