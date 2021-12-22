@@ -1,0 +1,7 @@
+{
+	"name": "SinoVMSHIR",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "SinoVMSHIR"
+	}
+}
