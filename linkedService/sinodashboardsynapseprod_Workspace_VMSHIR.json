@@ -1,0 +1,16 @@
+{
+	"name": "sinodashboardsynapseprod_Workspace_VMSHIR",
+	"type": "Microsoft.Synapse/workspaces/linkedservices",
+	"properties": {
+		"description": "sinodashboardsynapseprod_Workspace_VMSHIR",
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://sinostorageprod.dfs.core.windows.net"
+		},
+		"connectVia": {
+			"referenceName": "SinoVMSHIR",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
